@@ -2,179 +2,210 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Закрытый Вебинар по Арбитражу</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Закрытый эфир: Из Таргетолога в Арбитражника</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --accent: #ff3e3e; 
-            --dark: #0a0a0a;
-            --light-bg: #f9f9f9;
+            --primary: #ff3e3e;
             --whatsapp: #25d366;
+            --dark: #0f1113;
+            --text-main: #1a1a1a;
+            --text-muted: #666;
+            --bg-light: #f8f9fa;
         }
 
-        body {
-            font-family: 'Inter', -apple-system, system-ui, sans-serif;
-            margin: 0;
-            color: var(--dark);
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            color: var(--text-main); 
+            background-color: #fff;
             line-height: 1.4;
-            background: var(--white);
         }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        .container { width: 100%; max-width: 600px; margin: 0 auto; padding: 0 20px; }
 
-        /* HEADER / HERO */
-        header { padding: 60px 0; text-align: center; border-bottom: 1px solid #eee; }
-        
-        .status-online {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            font-weight: 700;
-            color: #25d366;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-        .dot { height: 8px; width: 8px; background: #25d366; border-radius: 50%; display: inline-block; animation: blink 1s infinite; }
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-
-        h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 900; margin: 0 0 20px; letter-spacing: -1px; }
-        
-        /* БОНУС КАРТОЧКА */
-        .bonus-box {
-            background: #fff8e1;
-            border: 2px dashed #ffc107;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 30px auto;
-            max-width: 600px;
-            font-weight: 600;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background: var(--whatsapp);
-            color: white;
-            padding: 25px 50px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 20px;
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
-            transition: 0.3s;
-        }
-        .cta-btn:hover { transform: scale(1.03); }
-
-        .limit-text { margin-top: 15px; font-size: 14px; color: #666; font-weight: 700; }
-
-        /* TABLE SECTION */
-        section { padding: 70px 0; }
-        .section-title { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 40px; }
-        
-        .vs-table { width: 100%; border-collapse: collapse; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .vs-table th { background: #000; color: #fff; padding: 20px; text-align: left; }
-        .vs-table td { padding: 20px; border-bottom: 1px solid #eee; background: #fff; }
-        .vs-table td.check { color: var(--accent); font-weight: 800; }
-
-        /* НОВИЧКИ BLOCK */
-        .newbie-focus {
+        /* HEADER: Спешка и Лайв-статус */
+        .live-bar {
             background: var(--dark);
             color: #fff;
-            padding: 50px;
-            border-radius: 30px;
+            padding: 10px 0;
             text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
+        .live-dot {
+            height: 8px; width: 8px; background: var(--primary);
+            border-radius: 50%; display: inline-block;
+            margin-right: 5px; animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 26px; }
-            .cta-btn { font-size: 16px; padding: 20px; width: 100%; box-sizing: border-box; }
+        /* HERO: 4U Заголовок */
+        .hero { padding: 40px 0 20px; text-align: center; }
+        .badge {
+            background: var(--bg-light);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        h1 { font-size: 32px; font-weight: 900; line-height: 1.1; margin: 0 0 15px; letter-spacing: -1px; }
+        h1 span { color: var(--primary); }
+        .hero-sub { font-size: 17px; color: var(--text-muted); margin-bottom: 30px; }
+
+        /* LEAD MAGNET: PDF Бонус */
+        .bonus-card {
+            background: linear-gradient(135deg, #fff 0%, #f1f1f1 100%);
+            border: 2px solid #eee;
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .bonus-icon { font-size: 40px; }
+        .bonus-text b { display: block; color: var(--primary); margin-bottom: 4px; }
+        .bonus-text p { margin: 0; font-size: 14px; font-weight: 500; }
+
+        /* КНОПКА: Главный конвертер */
+        .cta-wrapper { position: sticky; bottom: 20px; z-index: 100; padding: 0 20px; }
+        .cta-btn {
+            background: var(--whatsapp);
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 22px;
+            border-radius: 18px;
+            font-weight: 800;
+            font-size: 18px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            transition: transform 0.2s;
+        }
+        .cta-btn:active { transform: scale(0.96); }
+        .limit-info { text-align: center; font-size: 12px; color: #999; margin-top: 10px; font-weight: 600; }
+
+        /* VS SECTION: Давим на боли */
+        .vs-section { padding: 50px 0; background: var(--bg-light); border-radius: 40px 40px 0 0; }
+        .vs-card { background: #fff; border-radius: 20px; padding: 25px; margin-bottom: 15px; border: 1px solid #eee; }
+        .vs-row { display: flex; justify-content: space-between; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #f0f0f0; }
+        .vs-row:last-child { border: none; margin: 0; padding: 0; }
+        .vs-label { font-size: 12px; color: #aaa; text-transform: uppercase; font-weight: 700; width: 100%; display: block; margin-bottom: 5px; }
+        .vs-item { width: 48%; font-size: 15px; font-weight: 600; }
+        .vs-bad { color: #888; text-decoration: line-through; }
+        .vs-good { color: var(--primary); }
+
+        /* EXPERT BLOCK */
+        .expert { padding: 40px 20px; text-align: center; }
+        .expert-avatar { width: 80px; height: 80px; background: #ddd; border-radius: 50%; margin: 0 auto 15px; overflow: hidden; }
+        .expert h3 { margin: 0; font-size: 20px; }
+        .expert p { font-size: 14px; color: var(--text-muted); margin: 5px 0 20px; }
+
+        @media (min-width: 600px) {
+            h1 { font-size: 48px; }
+            .cta-wrapper { position: relative; bottom: 0; padding: 0; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <div class="status-online"><span class="dot"></span> Набор в группу открыт</div>
-        <h1>Хватит работать на клиентов. <br><span style="color:var(--accent)">Заливай на себя</span> и забирай всю прибыль.</h1>
-        
-        <div class="bonus-box">
-            🎁 СРАЗУ ПОСЛЕ ВХОДА: Получи PDF-гайд «Топ-5 офферов 2026 года для старта с бюджетом до $100»
-        </div>
-
-        <a href="https://wa.me/7XXXXXXXXXX?text=Хочу+на+вебинар+и+бонус" class="cta-btn">
-            ВСТУПИТЬ В ГРУППУ И ЗАБРАТЬ БОНУС
-        </a>
-        
-        <div class="limit-text">🔥 Осталось всего 14 мест из 100</div>
+    <div class="live-bar">
+        <span class="live-dot"></span> Эфир стартует скоро. Набор в группу ограничен
     </div>
-</header>
 
-<section style="background: #f4f4f4;">
-    <div class="container">
-        <h2 class="section-title">ПОЧЕМУ ТАРГЕТОЛОГИ НИЩАЮТ, А АРБИТРАЖНИКИ РАСТУТ?</h2>
-        <div style="overflow-x: auto;">
-            <table class="vs-table">
-                <thead>
-                    <tr>
-                        <th>Что выбираешь ты?</th>
-                        <th>Таргетолог (Найм)</th>
-                        <th style="background: var(--accent);">Арбитражник (Свобода)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><b>Зависимость</b></td>
-                        <td>От настроения заказчика</td>
-                        <td class="check">Только от твоих мозгов</td>
-                    </tr>
-                    <tr>
-                        <td><b>Потолок</b></td>
-                        <td>Ограничен бюджетом клиента</td>
-                        <td class="check">Масштаб x10 за один день</td>
-                    </tr>
-                    <tr>
-                        <td><b>Отчеты</b></td>
-                        <td>Бесконечные созвоны в Zoom</td>
-                        <td class="check">Смотришь только в стат-панель</td>
-                    </tr>
-                    <tr>
-                        <td><b>Деньги</b></td>
-                        <td>Ждешь зарплату раз в месяц</td>
-                        <td class="check">Выплаты каждый день в USD</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <div class="newbie-focus">
-            <h2 style="color: var(--accent);">ДЛЯ ТЕХ, КТО НАЧИНАЕТ С НУЛЯ:</h2>
-            <p style="font-size: 20px; max-width: 800px; margin: 0 auto 30px;">
-                Мы не будем учить "высоким материям". На вебинаре я покажу механику: <b>нажал кнопку А → запустил креатив Б → получил деньги С.</b> Без воды и сложных терминов.
-            </p>
-            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
-                <div style="background: #222; padding: 20px; border-radius: 15px; width: 200px;">
-                    <h3 style="margin: 0;">0 опыта</h3>
-                    <p style="font-size: 14px; opacity: 0.7;">Подходит для старта с "чистого листа"</p>
-                </div>
-                <div style="background: #222; padding: 20px; border-radius: 15px; width: 200px;">
-                    <h3 style="margin: 0;">Без ИП</h3>
-                    <p style="font-size: 14px; opacity: 0.7;">Работаем через партнерские сети</p>
+    <header class="hero">
+        <div class="container">
+            <div class="badge">БЕСПЛАТНЫЙ ВЕБИНАР</div>
+            <h1>Забудь про клиентов. Начни лить на <span>свои связки</span></h1>
+            <p class="hero-sub">Как таргетологу перейти в арбитраж трафика и делать $300 - $1000 дейли профита без правок и зумов.</p>
+            
+            <div class="bonus-card">
+                <div class="bonus-icon">🎁</div>
+                <div class="bonus-text">
+                    <b>БОНУС ПРИ ВХОДЕ:</b>
+                    <p>PDF «Схема обхода банов 2026: Как не терять аккаунты»</p>
                 </div>
             </div>
-            <a href="https://wa.me/7XXXXXXXXXX" class="cta-btn" style="background: #fff; color: #000;">ХОЧУ ССЫЛКУ НА ЭФИР</a>
-        </div>
-    </div>
-</section>
 
-<footer style="padding: 40px 0; text-align: center; color: #999; font-size: 12px;">
-    * Вебинар проводится в закрытом формате. Запись не гарантирована. <br>
-    &copy; 2026 Arbitrage Masterclass.
-</footer>
+            <div class="cta-wrapper">
+                <a href="https://wa.me/7XXXXXXXXXX?text=Хочу+на+вебинар+и+бонус_W1" class="cta-btn">
+                    ЗАБРАТЬ БОНУС И МЕСТО
+                </a>
+                <div class="limit-info">Заполнено 84% мест в группе</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="vs-section">
+        <div class="container">
+            <h2 style="text-align:center; font-size: 24px; margin-bottom: 30px;">Почему 2026 — год Арбитража?</h2>
+            
+            <div class="vs-card">
+                <div class="vs-row">
+                    <div class="vs-item">
+                        <span class="vs-label">Таргетолог</span>
+                        <span class="vs-bad">Правки от клиента "поиграйте со шрифтами"</span>
+                    </div>
+                    <div class="vs-item" style="text-align: right;">
+                        <span class="vs-label">Арбитражник</span>
+                        <span class="vs-good">Сам решаешь, что и когда заливать</span>
+                    </div>
+                </div>
+                <div class="vs-row">
+                    <div class="vs-item">
+                        <span class="vs-label">Доход</span>
+                        <span class="vs-bad">Фикс 100к - 300к тенге</span>
+                    </div>
+                    <div class="vs-item" style="text-align: right;">
+                        <span class="vs-label">Доход</span>
+                        <span class="vs-good">ROI 100%+ без потолка</span>
+                    </div>
+                </div>
+                <div class="vs-row">
+                    <div class="vs-item">
+                        <span class="vs-label">Время</span>
+                        <span class="vs-bad">Зумы, отчеты, KPI клиента</span>
+                    </div>
+                    <div class="vs-item" style="text-align: right;">
+                        <span class="vs-label">Время</span>
+                        <span class="vs-good">Работаешь 2-3 часа в день</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="expert">
+        <div class="expert-avatar">
+            <img src="" alt="" style="width:100%">
+        </div>
+        <h3>Ваше Имя</h3>
+        <p>Практикующий байер. Оборот $>500k за 2025 год.</p>
+        <p style="max-width: 400px; margin: 0 auto; font-style: italic; font-size: 13px;">
+            "Я покажу тебе, как превратить навыки таргета в машину по генерации личной прибыли."
+        </p>
+    </div>
+
+    <footer style="padding: 40px 0; text-align: center; background: #000; color: #fff; font-size: 11px;">
+        <div class="container">
+            Внимание: Вебинар не является финансовой рекомендацией. <br>
+            Арбитраж связан с рисками. Мы учим ими управлять. <br><br>
+            &copy; 2026 CPA ACADEMY. Все права защищены.
+        </div>
+    </footer>
 
 </body>
 </html>
