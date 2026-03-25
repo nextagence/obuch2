@@ -2,257 +2,198 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ОНЛАЙН-ВЕБИНАР ПО АРБИТРАЖУ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Landing Page | Арбитраж Трафика</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --accent: #FFD700; /* Золотой для $ */
-            --bg-main: #0a0e17; /* Глубокий темный фон */
-            --card-bg: #161c28;
+            --accent: #FFD700; /* Золотой акцент на деньги */
+            --bg-dark: #0a0b10; /* Глубокий темный фон */
+            --card-bg: #16181f;
             --text-white: #ffffff;
-            --btn-green: #25d366;
+            --whatsapp: #25d366;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-white);
-            margin: 0;
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            background: var(--bg-dark); 
+            color: var(--text-white); 
             line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 600px; margin: 0 auto; padding: 0 20px; }
 
-        /* 1. ГЛАВНЫЙ ЭКРАН (Hero) */
-        .hero {
-            padding: 100px 0 60px;
+        /* 1. ВЕРХНЯЯ ПЛАШКА */
+        .top-status {
+            background: var(--accent);
+            color: #000;
+            padding: 10px 0;
             text-align: center;
-        }
-
-        .badge {
-            display: inline-block;
-            border: 1px solid var(--accent);
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            color: var(--accent);
+            letter-spacing: 1px;
         }
 
-        h1 {
-            font-size: clamp(32px, 6vw, 64px);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 25px;
+        /* 2. ГЛАВНЫЙ ЭКРАН */
+        .hero { padding: 60px 0 40px; text-align: center; }
+        .hero h1 { 
+            font-size: clamp(28px, 8vw, 48px); 
+            font-weight: 900; 
+            line-height: 1; 
+            margin-bottom: 20px; 
             text-transform: uppercase;
         }
+        .hero h1 span { color: var(--accent); }
+        .hero p { font-size: 18px; opacity: 0.8; margin-bottom: 30px; }
 
-        .highlight {
-            color: var(--accent);
-        }
-
-        .subtitle {
-            font-size: clamp(18px, 3vw, 24px);
-            max-width: 850px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
-        }
-
-        /* 2. КНОПКИ WHATSAPP */
-        .btn-group {
+        /* 3. КНОПКА (Sticky на мобильных) */
+        .cta-container { position: sticky; bottom: 20px; z-index: 1000; padding: 0 15px; }
+        .cta-btn {
+            background: var(--whatsapp);
+            color: #fff;
+            text-decoration: none;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            transition: 0.2s;
         }
+        .cta-btn b { font-size: 18px; text-transform: uppercase; }
+        .cta-btn span { font-size: 12px; opacity: 0.9; margin-top: 4px; }
+        .cta-btn:active { transform: scale(0.96); }
 
-        .cta-button {
-            background-color: var(--btn-green);
-            color: #fff;
-            padding: 24px 48px;
-            font-size: 20px;
-            font-weight: 800;
-            text-decoration: none;
-            border-radius: 8px;
-            text-transform: uppercase;
-            transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
-        }
-
-        /* 3. БЛОК "ПОЧЕМУ АРБИТРАЖ" (КАРТОЧКИ) */
-        .section-padding { padding: 100px 0; }
-        .section-title {
-            font-size: 36px;
-            font-weight: 900;
-            margin-bottom: 60px;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        .grid-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .feature-card {
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 215, 0, 0.1);
-        }
-
-        .feature-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
+        /* 4. БЛОК ПРЕИМУЩЕСТВ (ПОЧЕМУ АРБИТРАЖ) */
+        .section { padding: 60px 0; }
+        .section-title { 
+            font-size: 26px; 
+            font-weight: 900; 
+            text-align: center; 
+            margin-bottom: 40px; 
             color: var(--accent);
+            text-transform: uppercase;
         }
 
-        /* 4. БЛОК "ДЛЯ КОГО" (СПИСОК КАК НА САЙТЕ) */
-        .check-list {
-            list-style: none;
-            padding: 0;
-            max-width: 800px;
-            margin: 0 auto;
+        .benefit-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
         }
+        .benefit-card h3 { margin: 0 0 10px; font-size: 20px; color: var(--accent); }
+        .benefit-card p { margin: 0; font-size: 15px; opacity: 0.7; }
 
-        .check-list li {
-            position: relative;
-            padding-left: 45px;
-            font-size: 20px;
-            margin-bottom: 25px;
+        /* 5. СПИСОК "ДЛЯ КОГО" (CHECKLIST) */
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 17px;
             font-weight: 600;
         }
-
-        .check-list li::before {
-            content: "✔";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 30px;
-            height: 30px;
+        .check-icon {
             background: var(--accent);
             color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
-            font-size: 16px;
-        }
-
-        /* 5. БЛОК АВТОРА */
-        .author-section {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            padding: 80px 0;
-        }
-
-        .author-image {
-            flex: 1;
-            background: var(--card-bg);
-            min-height: 500px;
-            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 800;
-            color: rgba(255,255,255,0.2);
-            border: 2px dashed rgba(255,255,255,0.1);
+            flex-shrink: 0;
+            font-size: 14px;
         }
 
-        .author-content { flex: 1.2; }
+        /* 6. БЛОК ЭКСПЕРТА */
+        .author { text-align: center; padding: 40px 0; }
+        .author-img { 
+            width: 120px; height: 120px; 
+            background: #222; 
+            border-radius: 50%; 
+            margin: 0 auto 20px; 
+            border: 3px solid var(--accent);
+            overflow: hidden;
+        }
+        .author h2 { font-size: 24px; margin-bottom: 10px; }
+        .author p { font-size: 15px; opacity: 0.7; font-style: italic; }
 
-        @media (max-width: 768px) {
-            .author-section { flex-direction: column-reverse; }
-            h1 { font-size: 32px; }
-            .cta-button { width: 100%; text-align: center; padding: 20px; font-size: 16px; }
+        footer { text-align: center; padding: 40px 0; font-size: 11px; opacity: 0.4; }
+
+        @media (min-width: 600px) {
+            .cta-container { position: relative; bottom: 0; padding: 0; margin-top: 30px; }
         }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <div class="container">
-            <div class="badge">ОНЛАЙН-ВЕБИНАР</div>
-            <h1>ХВАТИТ СЧИТАТЬ ТЕНГЕ. <br>ВЫХОДИ НА <span class="highlight">$10 000 В МЕСЯЦ</span></h1>
-            <p class="subtitle">Узнай, как новичку запустить бизнес на трафике в 2026 году и получать выплаты в долларах на любую карту</p>
-            
-            <div class="btn-group">
-                <a href="https://wa.me/7XXXXXXXXXX?text=ХОЧУ+НА+ВЕБИНАР" class="cta-button">ЗАРЕГИСТРИРОВАТЬСЯ БЕСПЛАТНО</a>
-                <p style="opacity: 0.6; font-size: 14px;">📍 Ссылка на вебинар придет в группу WhatsApp</p>
-            </div>
+    <div class="top-status">🔥 Набор в закрытую группу открыт • Осталось 7 мест</div>
+
+    <header class="hero container">
+        <h1>Твой путь к <span>$10,000</span> на трафике в 2026 году</h1>
+        <p>Узнай, как запустить арбитраж с нуля, выйти на доход в долларах и забыть про капризы клиентов.</p>
+
+        <div class="cta-container">
+            <a href="https://wa.me/7XXXXXXXXXX?text=Хочу+на+вебинар" class="cta-btn">
+                <b>Занять место в группе</b>
+                <span>Бесплатный доступ сегодня</span>
+            </a>
         </div>
     </header>
 
-    <section class="section-padding" style="background: #0e1420;">
-        <div class="container">
-            <h2 class="section-title">ПОЧЕМУ АРБИТРАЖ — ЭТО ЛУЧШИЙ ВЫБОР?</h2>
-            <div class="grid-features">
-                <div class="feature-card">
-                    <h3>Никаких клиентов</h3>
-                    <p>Тебе не нужно искать заказчиков, созваниваться и слушать правки. Ты работаешь только на себя.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Заработок в $</h3>
-                    <p>Твой доход не зависит от инфляции в стране. Ты получаешь твердую валюту за каждый лид.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Полная свобода</h3>
-                    <p>Нужен только ноутбук и интернет. Заливай трафик из любой точки мира в любое время.</p>
-                </div>
-            </div>
+    <section class="section container">
+        <h2 class="section-title">Почему именно сейчас?</h2>
+        
+        <div class="benefit-card">
+            <h3>💵 Доход в валюте</h3>
+            <p>Ты зарабатываешь в $, а значит инфляция и курс тенге больше не влияют на твою жизнь.</p>
+        </div>
+
+        <div class="benefit-card">
+            <h3>🚫 Без заказчиков</h3>
+            <p>Тебе не нужно искать клиентов или писать отчеты. Твой единственный отчет — баланс твоей карты.</p>
+        </div>
+
+        <div class="benefit-card">
+            <h3>🌍 Весь мир — офис</h3>
+            <p>Для работы нужен только ноутбук и интернет. Заливай трафик из любой точки планеты.</p>
         </div>
     </section>
 
-    <section class="section-padding">
-        <div class="container">
-            <h2 class="section-title">КОМУ НУЖНО БЫТЬ В ЭФИРЕ?</h2>
-            <ul class="check-list">
-                <li>Таргетологам, которые устали работать за низкий чек</li>
-                <li>Новичкам, которые ищут реальный способ заработка в онлайне</li>
-                <li>Тем, кто хочет видеть прибыль в долларах ($), а не в тенге</li>
-                <li>Фрилансерам, мечтающим избавиться от правок и отчетов заказчиков</li>
-            </ul>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="https://wa.me/7XXXXXXXXXX" class="cta-button">ВСТУПИТЬ В ГРУППУ ВЕБИНАРА</a>
-            </div>
+    <section class="section container" style="background: rgba(255,255,255,0.02); border-radius: 40px 40px 0 0;">
+        <h2 class="section-title">Кому это нужно?</h2>
+        
+        <div class="check-item">
+            <div class="check-icon">✓</div>
+            <span>Новичкам, которые хотят быстрый старт в IT без кода</span>
+        </div>
+        <div class="check-item">
+            <div class="check-icon">✓</div>
+            <span>Таргетологам, уставшим от правок и низких чеков</span>
+        </div>
+        <div class="check-item">
+            <div class="check-icon">✓</div>
+            <span>Фрилансерам, ищущим доход в твердой валюте ($)</span>
         </div>
     </section>
 
-    <section class="container">
-        <div class="author-section">
-            <div class="author-image">ФОТО ЭКСПЕРТА</div>
-            <div class="author-content">
-                <h2 style="font-size: 40px; font-weight: 900; margin-bottom: 20px;">МЕНЯ ЗОВУТ [ВАШЕ ИМЯ]</h2>
-                <p style="font-size: 18px; opacity: 0.8; margin-bottom: 20px;">
-                    Я прошел путь от наемного таргетолога до владельца команды с оборотом более $500 000 в год.
-                </p>
-                <p style="font-size: 18px; opacity: 0.8; margin-bottom: 30px;">
-                    На вебинаре я дам «сухой» остаток своего опыта — без воды и сложных теорий. Только то, что приносит деньги сегодня.
-                </p>
-                <a href="https://wa.me/7XXXXXXXXXX" class="cta-button" style="background: transparent; border: 2px solid var(--accent); color: var(--accent);">УЗНАТЬ БОЛЬШЕ</a>
-            </div>
+    <section class="author container">
+        <div class="author-img">
+            <img src="" alt="" style="width:100%; height:100%; object-fit:cover;">
         </div>
+        <h2>Твой Имя / Эксперт</h2>
+        <p>"Я покажу тебе самую короткую дорогу к первым деньгам в арбитраже без воды и сложных теорий."</p>
     </section>
 
-    <footer style="padding: 50px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: #666;">
-        <p>&copy; 2026 DOLLAR TRAFFIC. ВСЕ ПРАВА ЗАЩИЩЕНЫ.</p>
+    <footer>
+        &copy; 2026 Arbitrage Mastermind. Все права защищены. <br>
+        Результаты индивидуальны. Арбитраж — это бизнес.
     </footer>
 
 </body>
