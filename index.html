@@ -3,138 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Практикум по Арбитражу Трафика</title>
+    <title>Закрытый Вебинар по Арбитражу</title>
     <style>
         :root {
-            --accent: #ff3e3e; /* Красный акцент как на примере */
-            --dark: #111111;
-            --light-bg: #f5f5f5;
-            --white: #ffffff;
+            --accent: #ff3e3e; 
+            --dark: #0a0a0a;
+            --light-bg: #f9f9f9;
+            --whatsapp: #25d366;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
             margin: 0;
             color: var(--dark);
-            line-height: 1.5;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Hero Section */
-        header {
-            padding: 80px 0;
-            text-align: center;
+            line-height: 1.4;
             background: var(--white);
         }
 
-        .badge {
-            display: inline-block;
-            padding: 5px 15px;
-            background: var(--light-bg);
-            border-radius: 5px;
-            font-weight: 600;
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* HEADER / HERO */
+        header { padding: 60px 0; text-align: center; border-bottom: 1px solid #eee; }
+        
+        .status-online {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             font-size: 14px;
-            margin-bottom: 20px;
+            font-weight: 700;
+            color: #25d366;
+            margin-bottom: 15px;
             text-transform: uppercase;
         }
+        .dot { height: 8px; width: 8px; background: #25d366; border-radius: 50%; display: inline-block; animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 
-        h1 {
-            font-size: clamp(32px, 5vw, 56px);
-            max-width: 900px;
-            margin: 0 auto 30px;
-            line-height: 1.1;
-            font-weight: 800;
+        h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 900; margin: 0 0 20px; letter-spacing: -1px; }
+        
+        /* БОНУС КАРТОЧКА */
+        .bonus-box {
+            background: #fff8e1;
+            border: 2px dashed #ffc107;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px auto;
+            max-width: 600px;
+            font-weight: 600;
         }
 
-        .highlight {
-            color: var(--accent);
-        }
-
-        /* Кнопка в стиле WhatsApp */
         .cta-btn {
             display: inline-block;
-            background: #25d366;
+            background: var(--whatsapp);
             color: white;
-            padding: 20px 40px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 18px;
-            transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 25px rgba(37, 211, 102, 0.3);
-        }
-
-        /* Blocks */
-        section {
-            padding: 80px 0;
-        }
-
-        .bg-grey { background: var(--light-bg); }
-
-        .section-title {
-            font-size: 32px;
-            margin-bottom: 50px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .item {
-            padding: 30px;
-            background: white;
+            padding: 25px 50px;
             border-radius: 15px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 20px;
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+            transition: 0.3s;
+        }
+        .cta-btn:hover { transform: scale(1.03); }
+
+        .limit-text { margin-top: 15px; font-size: 14px; color: #666; font-weight: 700; }
+
+        /* TABLE SECTION */
+        section { padding: 70px 0; }
+        .section-title { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 40px; }
+        
+        .vs-table { width: 100%; border-collapse: collapse; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .vs-table th { background: #000; color: #fff; padding: 20px; text-align: left; }
+        .vs-table td { padding: 20px; border-bottom: 1px solid #eee; background: #fff; }
+        .vs-table td.check { color: var(--accent); font-weight: 800; }
+
+        /* НОВИЧКИ BLOCK */
+        .newbie-focus {
+            background: var(--dark);
+            color: #fff;
+            padding: 50px;
+            border-radius: 30px;
+            text-align: center;
         }
 
-        .item-num {
-            color: var(--accent);
-            font-weight: 900;
-            font-size: 24px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        /* Author Block */
-        .author {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-
-        .author-img {
-            flex: 1;
-            min-width: 300px;
-            background: #ddd;
-            height: 400px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-
-        .author-info {
-            flex: 1.5;
-            min-width: 300px;
-        }
-
-        @media (max-width: 768px) {
-            .author { flex-direction: column-reverse; }
+        @media (max-width: 600px) {
+            h1 { font-size: 26px; }
+            .cta-btn { font-size: 16px; padding: 20px; width: 100%; box-sizing: border-box; }
         }
     </style>
 </head>
@@ -142,127 +95,85 @@
 
 <header>
     <div class="container">
-        <div class="badge">Онлайн-практикум</div>
-        <h1>Как арбитражнику выйти на <span class="highlight">$10 000+ в месяц</span> на Facebook и TikTok</h1>
-        <p style="font-size: 18px; color: #666; margin-bottom: 40px;">
-            Разбор реальных связок 2026 года, которые дают ROI от 100%
-        </p>
-        <a href="https://wa.me/7XXXXXXXXXX?text=Хочу+на+практикум" class="cta-btn">ВСТУПИТЬ В ГРУППУ WHATSAPP</a>
+        <div class="status-online"><span class="dot"></span> Набор в группу открыт</div>
+        <h1>Хватит работать на клиентов. <br><span style="color:var(--accent)">Заливай на себя</span> и забирай всю прибыль.</h1>
+        
+        <div class="bonus-box">
+            🎁 СРАЗУ ПОСЛЕ ВХОДА: Получи PDF-гайд «Топ-5 офферов 2026 года для старта с бюджетом до $100»
+        </div>
+
+        <a href="https://wa.me/7XXXXXXXXXX?text=Хочу+на+вебинар+и+бонус" class="cta-btn">
+            ВСТУПИТЬ В ГРУППУ И ЗАБРАТЬ БОНУС
+        </a>
+        
+        <div class="limit-text">🔥 Осталось всего 14 мест из 100</div>
     </div>
 </header>
 
-<section class="bg-grey">
+<section style="background: #f4f4f4;">
     <div class="container">
-        <h2 class="section-title">Что разберем:</h2>
-        <div class="grid">
-            <div class="item">
-                <span class="item-num">01</span>
-                <h3>Актуальные ГЕО</h3>
-                <p>Куда лить в 2026 году: Tier-1 или развивающиеся рынки с дешевым лидом.</p>
-            </div>
-            <div class="item">
-                <span class="item-num">02</span>
-                <h3>Техничка</h3>
-                <p>Как обходить чеки и баны без потери расходников и нервов.</p>
-            </div>
-            <div class="item">
-                <span class="item-num">03</span>
-                <h3>Масштабирование</h3>
-                <p>Механика перехода с $100 дейли спенда до $2000+ без потери качества.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section style="background: #fff; padding: 80px 0;">
-    <div class="container">
-        <h2 class="section-title" style="text-align: center;">Кому подойдет этот практикум:</h2>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-            <div style="border-left: 4px solid var(--accent); padding-left: 20px;">
-                <h4 style="margin-bottom: 10px; font-size: 20px;">Новичкам в онлайне</h4>
-                <p style="color: #555;">Кто хочет сразу начать с высокодоходной ниши, а не тратить месяцы на поиск клиентов за 50 000 тенге.</p>
-            </div>
-            <div style="border-left: 4px solid var(--accent); padding-left: 20px;">
-                <h4 style="margin-bottom: 10px; font-size: 20px;">Таргетологам и SMM</h4>
-                <p style="color: #555;">Кто устал от правок клиентов, отчетов и «выгорания» за низкий чек. Пора работать на себя.</p>
-            </div>
-            <div style="border-left: 4px solid var(--accent); padding-left: 20px;">
-                <h4 style="margin-bottom: 10px; font-size: 20px;">Тем, кто ищет удаленку</h4>
-                <p style="color: #555;">Кому нужен твердый навык генерации денег из любой точки мира, имея только ноутбук и интернет.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="bg-grey">
-    <div class="container">
-        <h2 class="section-title" style="text-align: center;">Почему Арбитраж лучше классического таргета?</h2>
+        <h2 class="section-title">ПОЧЕМУ ТАРГЕТОЛОГИ НИЩАЮТ, А АРБИТРАЖНИКИ РАСТУТ?</h2>
         <div style="overflow-x: auto;">
-            <table style="width: 100%; border-collapse: collapse; background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <table class="vs-table">
                 <thead>
-                    <tr style="background: #000; color: #fff; text-align: left;">
-                        <th style="padding: 20px;">Критерий</th>
-                        <th style="padding: 20px;">Обычный Таргетолог</th>
-                        <th style="padding: 20px; background: var(--accent);">Арбитражник</th>
+                    <tr>
+                        <th>Что выбираешь ты?</th>
+                        <th>Таргетолог (Найм)</th>
+                        <th style="background: var(--accent);">Арбитражник (Свобода)</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr style="border-bottom: 1px solid #eee;">
-                        <td style="padding: 20px; font-weight: bold;">Клиенты</td>
-                        <td style="padding: 20px;">Постоянный поиск, звонки, отчеты</td>
-                        <td style="padding: 20px;"><b>Клиенты не нужны.</b> Работаешь напрямую с ПП</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #eee;">
-                        <td style="padding: 20px; font-weight: bold;">Доход</td>
-                        <td style="padding: 20px;">Фиксированный оклад за проект</td>
-                        <td style="padding: 20px;"><b>Не ограничен.</b> Чем больше залил — тем больше заработал</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #eee;">
-                        <td style="padding: 20px; font-weight: bold;">Свобода</td>
-                        <td style="padding: 20px;">Зависишь от настроения заказчика</td>
-                        <td style="padding: 20px;"><b>Полная автономия.</b> Сам решаешь, когда стопнуть рекламу</td>
+                    <tr>
+                        <td><b>Зависимость</b></td>
+                        <td>От настроения заказчика</td>
+                        <td class="check">Только от твоих мозгов</td>
                     </tr>
                     <tr>
-                        <td style="padding: 20px; font-weight: bold;">Результат</td>
-                        <td style="padding: 20px;">Нужно «понравиться» клиенту</td>
-                        <td style="padding: 20px;"><b>Только цифры.</b> ROI — твой главный показатель успеха</td>
+                        <td><b>Потолок</b></td>
+                        <td>Ограничен бюджетом клиента</td>
+                        <td class="check">Масштаб x10 за один день</td>
+                    </tr>
+                    <tr>
+                        <td><b>Отчеты</b></td>
+                        <td>Бесконечные созвоны в Zoom</td>
+                        <td class="check">Смотришь только в стат-панель</td>
+                    </tr>
+                    <tr>
+                        <td><b>Деньги</b></td>
+                        <td>Ждешь зарплату раз в месяц</td>
+                        <td class="check">Выплаты каждый день в USD</td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-        
-        <div style="text-align: center; margin-top: 50px;">
-            <p style="font-size: 20px; font-weight: bold; margin-bottom: 30px;">
-                В арбитраже ты — сам себе хозяин. Ты не ждешь одобрения макетов от заказчика. <br>
-                <span style="color: var(--accent);">Ты просто превращаешь трафик в деньги.</span>
-            </p>
-            <a href="https://wa.me/7XXXXXXXXXX" class="cta-btn">ЗАБРАТЬ ПОШАГОВЫЙ ПЛАН В WHATSAPP</a>
         </div>
     </div>
 </section>
 
 <section>
     <div class="container">
-        <div class="author">
-            <div class="author-info">
-                <h2 style="font-size: 40px; margin-bottom: 20px;">Меня зовут [Ваше Имя]</h2>
-                <p>Я прошел путь от первых «минусовых» заливов до собственной команды с оборотом в сотни тысяч долларов.</p>
-                <ul style="padding-left: 20px; margin-bottom: 30px;">
-                    <li>Собственный медиабаинг (10+ байеров)</li>
-                    <li>Работаю с прямыми рекламодателями по всему миру</li>
-                    <li>Знаю, как делать результат без «воды»</li>
-                </ul>
-                <a href="https://wa.me/7XXXXXXXXXX" class="cta-btn" style="background: #000;">ЗАБРОНИРОВАТЬ МЕСТО</a>
+        <div class="newbie-focus">
+            <h2 style="color: var(--accent);">ДЛЯ ТЕХ, КТО НАЧИНАЕТ С НУЛЯ:</h2>
+            <p style="font-size: 20px; max-width: 800px; margin: 0 auto 30px;">
+                Мы не будем учить "высоким материям". На вебинаре я покажу механику: <b>нажал кнопку А → запустил креатив Б → получил деньги С.</b> Без воды и сложных терминов.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
+                <div style="background: #222; padding: 20px; border-radius: 15px; width: 200px;">
+                    <h3 style="margin: 0;">0 опыта</h3>
+                    <p style="font-size: 14px; opacity: 0.7;">Подходит для старта с "чистого листа"</p>
+                </div>
+                <div style="background: #222; padding: 20px; border-radius: 15px; width: 200px;">
+                    <h3 style="margin: 0;">Без ИП</h3>
+                    <p style="font-size: 14px; opacity: 0.7;">Работаем через партнерские сети</p>
+                </div>
             </div>
-            <div class="author-img">
-                ФОТО ЭКСПЕРТА
-            </div>
+            <a href="https://wa.me/7XXXXXXXXXX" class="cta-btn" style="background: #fff; color: #000;">ХОЧУ ССЫЛКУ НА ЭФИР</a>
         </div>
     </div>
 </section>
 
-<footer style="padding: 50px 0; text-align: center; border-top: 1px solid #eee;">
-    <p>&copy; 2026 Практикум по арбитражу. Все права защищены.</p>
+<footer style="padding: 40px 0; text-align: center; color: #999; font-size: 12px;">
+    * Вебинар проводится в закрытом формате. Запись не гарантирована. <br>
+    &copy; 2026 Arbitrage Masterclass.
 </footer>
 
 </body>
