@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Закрытый эфир: Из Таргетолога в Арбитражника</title>
+    <title>Заработок в $ на Арбитраже Трафика</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
@@ -12,171 +12,173 @@
             --primary: #ff3e3e;
             --whatsapp: #25d366;
             --dark: #0f1113;
-            --text-main: #1a1a1a;
-            --text-muted: #666;
-            --bg-light: #f8f9fa;
+            --gold: #ffcf4b; /* Цвет для акцента на деньгах */
+            --bg-light: #f4f7f6;
         }
 
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { 
             font-family: 'Inter', sans-serif; 
             margin: 0; 
-            color: var(--text-main); 
+            color: #1a1a1a; 
             background-color: #fff;
-            line-height: 1.4;
+            line-height: 1.3;
         }
 
-        .container { width: 100%; max-width: 600px; margin: 0 auto; padding: 0 20px; }
+        .container { width: 100%; max-width: 500px; margin: 0 auto; padding: 0 20px; }
 
-        .live-bar {
-            background: var(--dark);
+        /* HEADER: Спешка */
+        .top-line {
+            background: var(--primary);
             color: #fff;
-            padding: 10px 0;
+            padding: 8px 0;
             text-align: center;
-            font-size: 12px;
-            font-weight: 700;
+            font-size: 11px;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
-        .live-dot {
-            height: 8px; width: 8px; background: var(--primary);
-            border-radius: 50%; display: inline-block;
-            margin-right: 5px; animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
 
-        .hero { padding: 50px 0 30px; text-align: center; }
-        .badge {
-            background: var(--bg-light);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 15px;
+        /* HERO: Агрессивный заголовок на массы */
+        .hero { padding: 40px 0 20px; text-align: center; }
+        h1 { font-size: 34px; font-weight: 900; line-height: 1; margin: 0 0 15px; letter-spacing: -1.5px; text-transform: uppercase; }
+        h1 span { color: var(--primary); }
+        .hero-sub { font-size: 18px; font-weight: 600; color: #444; margin-bottom: 25px; }
+        
+        .money-badge {
+            background: #fff8e1;
+            border: 1px solid var(--gold);
+            padding: 10px;
+            border-radius: 12px;
+            font-weight: 800;
+            color: #b8860b;
+            margin-bottom: 25px;
             display: inline-block;
         }
-        h1 { font-size: 32px; font-weight: 900; line-height: 1.1; margin: 0 0 15px; letter-spacing: -1px; }
-        h1 span { color: var(--primary); }
-        .hero-sub { font-size: 17px; color: var(--text-muted); margin-bottom: 40px; }
 
-        .cta-wrapper { position: sticky; bottom: 20px; z-index: 100; padding: 0 20px; }
+        /* КНОПКА: Всегда на виду */
+        .cta-wrapper { position: sticky; bottom: 20px; z-index: 100; padding: 0 15px; }
         .cta-btn {
             background: var(--whatsapp);
             color: #fff;
             text-decoration: none;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 22px;
-            border-radius: 18px;
-            font-weight: 800;
-            font-size: 18px;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-            transition: transform 0.2s;
+            padding: 18px;
+            border-radius: 20px;
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.5);
+            transition: 0.2s;
         }
-        .cta-btn:active { transform: scale(0.96); }
-        .limit-info { text-align: center; font-size: 12px; color: #999; margin-top: 10px; font-weight: 600; }
+        .cta-btn span:first-child { font-weight: 900; font-size: 19px; }
+        .cta-btn span:last-child { font-size: 12px; opacity: 0.9; font-weight: 600; }
+        .cta-btn:active { transform: scale(0.95); }
 
-        .vs-section { padding: 60px 0; background: var(--bg-light); border-radius: 40px 40px 0 0; margin-top: 30px;}
-        .vs-card { background: #fff; border-radius: 20px; padding: 25px; margin-bottom: 15px; border: 1px solid #eee; }
-        .vs-row { display: flex; justify-content: space-between; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #f0f0f0; }
-        .vs-row:last-child { border: none; margin: 0; padding: 0; }
-        .vs-label { font-size: 11px; color: #aaa; text-transform: uppercase; font-weight: 700; width: 100%; display: block; margin-bottom: 5px; }
-        .vs-item { width: 48%; font-size: 14px; font-weight: 600; }
-        .vs-bad { color: #888; }
-        .vs-good { color: var(--primary); }
+        /* БЛОК "ПОЧЕМУ АРБИТРАЖ" - Яркий и выделяющийся */
+        .why-section { padding: 50px 0; background: var(--dark); color: #fff; border-radius: 35px 35px 0 0; }
+        .why-title { text-align: center; color: var(--gold); font-size: 26px; font-weight: 900; margin-bottom: 30px; text-transform: uppercase; }
+        
+        .why-grid { display: grid; gap: 15px; }
+        .why-item {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 20px;
+            border-left: 5px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .why-icon { font-size: 30px; }
+        .why-text b { display: block; font-size: 18px; color: #fff; margin-bottom: 3px; }
+        .why-text p { margin: 0; font-size: 14px; color: #aaa; }
 
-        .expert { padding: 60px 20px; text-align: center; }
-        .expert-avatar { width: 100px; height: 100px; background: #ddd; border-radius: 50%; margin: 0 auto 20px; overflow: hidden; }
-        .expert h3 { margin: 0; font-size: 22px; font-weight: 900; }
-        .expert p { font-size: 14px; color: var(--text-muted); margin: 5px 0 25px; }
+        /* ДЛЯ НОВИЧКОВ */
+        .newbie-block { padding: 50px 0; text-align: center; }
+        .step { margin-bottom: 30px; }
+        .step-num { font-weight: 900; color: #eee; font-size: 60px; line-height: 1; display: block; margin-bottom: -35px; }
+        .step-content { position: relative; z-index: 1; font-weight: 800; font-size: 18px; }
 
         @media (min-width: 600px) {
-            h1 { font-size: 44px; }
-            .cta-wrapper { position: relative; bottom: 0; padding: 0; }
+            h1 { font-size: 50px; }
+            .cta-wrapper { position: relative; bottom: 0; margin-top: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="live-bar">
-        <span class="live-dot"></span> Идет набор участников в закрытую группу
-    </div>
+    <div class="top-line">Места в бесплатной группе ограничены • Осталось 9 мест</div>
 
     <header class="hero">
         <div class="container">
-            <div class="badge">БЕСПЛАТНЫЙ ВЕБИНАР</div>
-            <h1>Хватит работать на клиентов. <span>Лей на себя.</span></h1>
-            <p class="hero-sub">Как таргетологу перейти в арбитраж трафика и выйти на доход в $500 - $1000 в сутки без правок и зумов.</p>
+            <h1>Хватит считать тенге. <br><span>Зарабатывай в $</span></h1>
+            <p class="hero-sub">Как запустить онлайн-бизнес на трафике и выйти на первые <b>$100 в день</b> без опыта.</p>
             
+            <div class="money-badge">
+                💰 ТВОЙ ПЛАН: Начни с $0 и дойди до $3,000/мес
+            </div>
+
             <div class="cta-wrapper">
-                <a href="https://wa.me/7XXXXXXXXXX?text=Хочу+на+вебинар_W1" class="cta-btn">
-                    ЗАНЯТЬ МЕСТО В ГРУППЕ
+                <a href="https://wa.me/7XXXXXXXXXX?text=Хочу+зарабатывать+в+долларах" class="cta-btn">
+                    <span>ЗАЙТИ В ГРУППУ ВЕБИНАРА</span>
+                    <span>Регистрация бесплатная • Ссылка внутри</span>
                 </a>
-                <div class="limit-info">Осталось 12 свободных мест</div>
             </div>
         </div>
     </header>
 
-    <section class="vs-section">
+    <section class="why-section">
         <div class="container">
-            <h2 style="text-align:center; font-size: 24px; margin-bottom: 30px; font-weight: 900;">ПОЧЕМУ АРБИТРАЖ?</h2>
-            
-            <div class="vs-card">
-                <div class="vs-row">
-                    <div class="vs-item">
-                        <span class="vs-label">Таргетолог</span>
-                        <span class="vs-bad">Правки и капризы заказчика</span>
-                    </div>
-                    <div class="vs-item" style="text-align: right;">
-                        <span class="vs-label">Арбитражник</span>
-                        <span class="vs-good">Свобода действий и креатива</span>
+            <h2 class="why-title">Почему Арбитраж — это ТОП?</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon">💵</div>
+                    <div class="why-text">
+                        <b>Доход в долларах</b>
+                        <p>Курс растет — твой доход растет. Забудь про инфляцию.</p>
                     </div>
                 </div>
-                <div class="vs-row">
-                    <div class="vs-item">
-                        <span class="vs-label">Доход</span>
-                        <span class="vs-bad">Фикс за проект (в тенге)</span>
-                    </div>
-                    <div class="vs-item" style="text-align: right;">
-                        <span class="vs-label">Доход</span>
-                        <span class="vs-good">Прибыль в долларах (USD)</span>
+                <div class="why-item" style="border-left-color: var(--gold);">
+                    <div class="why-icon">🚫</div>
+                    <div class="why-text">
+                        <b>Никаких клиентов</b>
+                        <p>Тебе не нужно никому угождать. Ты сам себе хозяин.</p>
                     </div>
                 </div>
-                <div class="vs-row">
-                    <div class="vs-item">
-                        <span class="vs-label">Процесс</span>
-                        <span class="vs-bad">Бесконечные созвоны и отчеты</span>
-                    </div>
-                    <div class="vs-item" style="text-align: right;">
-                        <span class="vs-label">Процесс</span>
-                        <span class="vs-good">Контроль только за ROI</span>
+                <div class="why-item">
+                    <div class="why-icon">🌍</div>
+                    <div class="why-text">
+                        <b>Нужен только ноутбук</b>
+                        <p>Работай из дома, кофейни или с пляжа. Весь мир — твой офис.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="expert">
+    <section class="newbie-block">
         <div class="container">
-            <div class="expert-avatar">
-                <img src="" alt="" style="width:100%; height:100%; object-fit: cover; background: #eee;">
+            <h2 style="font-weight: 900; text-transform: uppercase;">Простой путь новичка:</h2>
+            <div class="step">
+                <span class="step-num">01</span>
+                <div class="step-content">Заходишь на вебинар</div>
             </div>
-            <h3>Ваше Имя</h3>
-            <p>Практикующий байер. Оборот $>500k за 2025 год.</p>
-            <p style="max-width: 400px; margin: 0 auto; font-style: italic; font-size: 14px; color: #444;">
-                "Я покажу, как новичку пройти путь от первых заливов до стабильной прибыли на арбитражных связках."
+            <div class="step">
+                <span class="step-num">02</span>
+                <div class="step-content">Копируешь готовую схему</div>
+            </div>
+            <div class="step">
+                <span class="step-num">03</span>
+                <div class="step-content">Получаешь первые $ на карту</div>
+            </div>
+            
+            <p style="color: #666; font-size: 14px; margin-top: 40px;">
+                * Тебе не нужно быть программистом или гуру маркетинга. Достаточно следовать инструкции.
             </p>
         </div>
-    </div>
+    </section>
 
-    <footer style="padding: 50px 0; text-align: center; background: #000; color: #fff; font-size: 11px;">
-        <div class="container">
-            &copy; 2026 CPA ACADEMY. Все права защищены. <br>
-            Вебинар предназначен для обучения навыкам работы с трафиком.
-        </div>
+    <footer style="padding: 30px 0; text-align: center; border-top: 1px solid #eee; font-size: 10px; color: #aaa;">
+        © 2026 CPA DOLLAR ACADEMY. Все права защищены. <br>
+        Результат зависит от твоего желания и действий.
     </footer>
 
 </body>
