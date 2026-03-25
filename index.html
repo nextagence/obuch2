@@ -2,183 +2,257 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Заработок в $ на Арбитраже Трафика</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОНЛАЙН-ВЕБИНАР ПО АРБИТРАЖУ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #ff3e3e;
-            --whatsapp: #25d366;
-            --dark: #0f1113;
-            --gold: #ffcf4b; /* Цвет для акцента на деньгах */
-            --bg-light: #f4f7f6;
+            --accent: #FFD700; /* Золотой для $ */
+            --bg-main: #0a0e17; /* Глубокий темный фон */
+            --card-bg: #161c28;
+            --text-white: #ffffff;
+            --btn-green: #25d366;
         }
 
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            color: #1a1a1a; 
-            background-color: #fff;
-            line-height: 1.3;
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-white);
+            margin: 0;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container { width: 100%; max-width: 500px; margin: 0 auto; padding: 0 20px; }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-        /* HEADER: Спешка */
-        .top-line {
-            background: var(--primary);
-            color: #fff;
-            padding: 8px 0;
+        /* 1. ГЛАВНЫЙ ЭКРАН (Hero) */
+        .hero {
+            padding: 100px 0 60px;
             text-align: center;
-            font-size: 11px;
+        }
+
+        .badge {
+            display: inline-block;
+            border: 1px solid var(--accent);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
             font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+
+        h1 {
+            font-size: clamp(32px, 6vw, 64px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
             text-transform: uppercase;
         }
 
-        /* HERO: Агрессивный заголовок на массы */
-        .hero { padding: 40px 0 20px; text-align: center; }
-        h1 { font-size: 34px; font-weight: 900; line-height: 1; margin: 0 0 15px; letter-spacing: -1.5px; text-transform: uppercase; }
-        h1 span { color: var(--primary); }
-        .hero-sub { font-size: 18px; font-weight: 600; color: #444; margin-bottom: 25px; }
-        
-        .money-badge {
-            background: #fff8e1;
-            border: 1px solid var(--gold);
-            padding: 10px;
-            border-radius: 12px;
-            font-weight: 800;
-            color: #b8860b;
-            margin-bottom: 25px;
-            display: inline-block;
+        .highlight {
+            color: var(--accent);
         }
 
-        /* КНОПКА: Всегда на виду */
-        .cta-wrapper { position: sticky; bottom: 20px; z-index: 100; padding: 0 15px; }
-        .cta-btn {
-            background: var(--whatsapp);
-            color: #fff;
-            text-decoration: none;
+        .subtitle {
+            font-size: clamp(18px, 3vw, 24px);
+            max-width: 850px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        /* 2. КНОПКИ WHATSAPP */
+        .btn-group {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 18px;
-            border-radius: 20px;
-            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.5);
-            transition: 0.2s;
-        }
-        .cta-btn span:first-child { font-weight: 900; font-size: 19px; }
-        .cta-btn span:last-child { font-size: 12px; opacity: 0.9; font-weight: 600; }
-        .cta-btn:active { transform: scale(0.95); }
-
-        /* БЛОК "ПОЧЕМУ АРБИТРАЖ" - Яркий и выделяющийся */
-        .why-section { padding: 50px 0; background: var(--dark); color: #fff; border-radius: 35px 35px 0 0; }
-        .why-title { text-align: center; color: var(--gold); font-size: 26px; font-weight: 900; margin-bottom: 30px; text-transform: uppercase; }
-        
-        .why-grid { display: grid; gap: 15px; }
-        .why-item {
-            background: rgba(255,255,255,0.05);
-            padding: 20px;
-            border-radius: 20px;
-            border-left: 5px solid var(--primary);
-            display: flex;
-            align-items: center;
             gap: 15px;
         }
-        .why-icon { font-size: 30px; }
-        .why-text b { display: block; font-size: 18px; color: #fff; margin-bottom: 3px; }
-        .why-text p { margin: 0; font-size: 14px; color: #aaa; }
 
-        /* ДЛЯ НОВИЧКОВ */
-        .newbie-block { padding: 50px 0; text-align: center; }
-        .step { margin-bottom: 30px; }
-        .step-num { font-weight: 900; color: #eee; font-size: 60px; line-height: 1; display: block; margin-bottom: -35px; }
-        .step-content { position: relative; z-index: 1; font-weight: 800; font-size: 18px; }
+        .cta-button {
+            background-color: var(--btn-green);
+            color: #fff;
+            padding: 24px 48px;
+            font-size: 20px;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 8px;
+            text-transform: uppercase;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+        }
 
-        @media (min-width: 600px) {
-            h1 { font-size: 50px; }
-            .cta-wrapper { position: relative; bottom: 0; margin-top: 20px; }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        /* 3. БЛОК "ПОЧЕМУ АРБИТРАЖ" (КАРТОЧКИ) */
+        .section-padding { padding: 100px 0; }
+        .section-title {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .grid-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        /* 4. БЛОК "ДЛЯ КОГО" (СПИСОК КАК НА САЙТЕ) */
+        .check-list {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .check-list li {
+            position: relative;
+            padding-left: 45px;
+            font-size: 20px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .check-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background: var(--accent);
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 16px;
+        }
+
+        /* 5. БЛОК АВТОРА */
+        .author-section {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 80px 0;
+        }
+
+        .author-image {
+            flex: 1;
+            background: var(--card-bg);
+            min-height: 500px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: rgba(255,255,255,0.2);
+            border: 2px dashed rgba(255,255,255,0.1);
+        }
+
+        .author-content { flex: 1.2; }
+
+        @media (max-width: 768px) {
+            .author-section { flex-direction: column-reverse; }
+            h1 { font-size: 32px; }
+            .cta-button { width: 100%; text-align: center; padding: 20px; font-size: 16px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="top-line">Места в бесплатной группе ограничены • Осталось 9 мест</div>
-
     <header class="hero">
         <div class="container">
-            <h1>Хватит считать тенге. <br><span>Зарабатывай в $</span></h1>
-            <p class="hero-sub">Как запустить онлайн-бизнес на трафике и выйти на первые <b>$100 в день</b> без опыта.</p>
+            <div class="badge">ОНЛАЙН-ВЕБИНАР</div>
+            <h1>ХВАТИТ СЧИТАТЬ ТЕНГЕ. <br>ВЫХОДИ НА <span class="highlight">$10 000 В МЕСЯЦ</span></h1>
+            <p class="subtitle">Узнай, как новичку запустить бизнес на трафике в 2026 году и получать выплаты в долларах на любую карту</p>
             
-            <div class="money-badge">
-                💰 ТВОЙ ПЛАН: Начни с $0 и дойди до $3,000/мес
-            </div>
-
-            <div class="cta-wrapper">
-                <a href="https://wa.me/7XXXXXXXXXX?text=Хочу+зарабатывать+в+долларах" class="cta-btn">
-                    <span>ЗАЙТИ В ГРУППУ ВЕБИНАРА</span>
-                    <span>Регистрация бесплатная • Ссылка внутри</span>
-                </a>
+            <div class="btn-group">
+                <a href="https://wa.me/7XXXXXXXXXX?text=ХОЧУ+НА+ВЕБИНАР" class="cta-button">ЗАРЕГИСТРИРОВАТЬСЯ БЕСПЛАТНО</a>
+                <p style="opacity: 0.6; font-size: 14px;">📍 Ссылка на вебинар придет в группу WhatsApp</p>
             </div>
         </div>
     </header>
 
-    <section class="why-section">
+    <section class="section-padding" style="background: #0e1420;">
         <div class="container">
-            <h2 class="why-title">Почему Арбитраж — это ТОП?</h2>
-            <div class="why-grid">
-                <div class="why-item">
-                    <div class="why-icon">💵</div>
-                    <div class="why-text">
-                        <b>Доход в долларах</b>
-                        <p>Курс растет — твой доход растет. Забудь про инфляцию.</p>
-                    </div>
+            <h2 class="section-title">ПОЧЕМУ АРБИТРАЖ — ЭТО ЛУЧШИЙ ВЫБОР?</h2>
+            <div class="grid-features">
+                <div class="feature-card">
+                    <h3>Никаких клиентов</h3>
+                    <p>Тебе не нужно искать заказчиков, созваниваться и слушать правки. Ты работаешь только на себя.</p>
                 </div>
-                <div class="why-item" style="border-left-color: var(--gold);">
-                    <div class="why-icon">🚫</div>
-                    <div class="why-text">
-                        <b>Никаких клиентов</b>
-                        <p>Тебе не нужно никому угождать. Ты сам себе хозяин.</p>
-                    </div>
+                <div class="feature-card">
+                    <h3>Заработок в $</h3>
+                    <p>Твой доход не зависит от инфляции в стране. Ты получаешь твердую валюту за каждый лид.</p>
                 </div>
-                <div class="why-item">
-                    <div class="why-icon">🌍</div>
-                    <div class="why-text">
-                        <b>Нужен только ноутбук</b>
-                        <p>Работай из дома, кофейни или с пляжа. Весь мир — твой офис.</p>
-                    </div>
+                <div class="feature-card">
+                    <h3>Полная свобода</h3>
+                    <p>Нужен только ноутбук и интернет. Заливай трафик из любой точки мира в любое время.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="newbie-block">
+    <section class="section-padding">
         <div class="container">
-            <h2 style="font-weight: 900; text-transform: uppercase;">Простой путь новичка:</h2>
-            <div class="step">
-                <span class="step-num">01</span>
-                <div class="step-content">Заходишь на вебинар</div>
+            <h2 class="section-title">КОМУ НУЖНО БЫТЬ В ЭФИРЕ?</h2>
+            <ul class="check-list">
+                <li>Таргетологам, которые устали работать за низкий чек</li>
+                <li>Новичкам, которые ищут реальный способ заработка в онлайне</li>
+                <li>Тем, кто хочет видеть прибыль в долларах ($), а не в тенге</li>
+                <li>Фрилансерам, мечтающим избавиться от правок и отчетов заказчиков</li>
+            </ul>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://wa.me/7XXXXXXXXXX" class="cta-button">ВСТУПИТЬ В ГРУППУ ВЕБИНАРА</a>
             </div>
-            <div class="step">
-                <span class="step-num">02</span>
-                <div class="step-content">Копируешь готовую схему</div>
-            </div>
-            <div class="step">
-                <span class="step-num">03</span>
-                <div class="step-content">Получаешь первые $ на карту</div>
-            </div>
-            
-            <p style="color: #666; font-size: 14px; margin-top: 40px;">
-                * Тебе не нужно быть программистом или гуру маркетинга. Достаточно следовать инструкции.
-            </p>
         </div>
     </section>
 
-    <footer style="padding: 30px 0; text-align: center; border-top: 1px solid #eee; font-size: 10px; color: #aaa;">
-        © 2026 CPA DOLLAR ACADEMY. Все права защищены. <br>
-        Результат зависит от твоего желания и действий.
+    <section class="container">
+        <div class="author-section">
+            <div class="author-image">ФОТО ЭКСПЕРТА</div>
+            <div class="author-content">
+                <h2 style="font-size: 40px; font-weight: 900; margin-bottom: 20px;">МЕНЯ ЗОВУТ [ВАШЕ ИМЯ]</h2>
+                <p style="font-size: 18px; opacity: 0.8; margin-bottom: 20px;">
+                    Я прошел путь от наемного таргетолога до владельца команды с оборотом более $500 000 в год.
+                </p>
+                <p style="font-size: 18px; opacity: 0.8; margin-bottom: 30px;">
+                    На вебинаре я дам «сухой» остаток своего опыта — без воды и сложных теорий. Только то, что приносит деньги сегодня.
+                </p>
+                <a href="https://wa.me/7XXXXXXXXXX" class="cta-button" style="background: transparent; border: 2px solid var(--accent); color: var(--accent);">УЗНАТЬ БОЛЬШЕ</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 50px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: #666;">
+        <p>&copy; 2026 DOLLAR TRAFFIC. ВСЕ ПРАВА ЗАЩИЩЕНЫ.</p>
     </footer>
 
 </body>
