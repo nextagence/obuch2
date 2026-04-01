@@ -242,42 +242,31 @@
     }
 
     .speaker-photo {
-      aspect-ratio: 4 / 4.6;
-      border-radius: 24px;
-      background:
-        linear-gradient(180deg, rgba(158,255,0,.18), transparent 45%),
-        linear-gradient(135deg, #181b12, #0f1015);
-      border: 1px solid rgba(255,255,255,.08);
-      overflow: hidden;
-      position: relative;
-      display: grid;
-      place-items: center;
-      margin-bottom: 20px;
-    }
+  aspect-ratio: 4 / 4.6;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(158,255,0,.18), transparent 45%),
+    linear-gradient(135deg, #181b12, #0f1015);
+  border: 1px solid rgba(255,255,255,.08);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+  padding: 18px;
+}
 
-    .speaker-photo::before {
-      content: "Иван\A НАВИН";
-      white-space: pre;
-      font-size: clamp(24px, 4vw, 42px);
-      line-height: .92;
-      font-weight: 900;
-      color: rgba(255,255,255,.16);
-      position: absolute;
-      top: 18px;
-      left: 18px;
-    }
+.speaker-photo::before {
+  content: none;
+}
 
-    .speaker-avatar {
-      width: 78%;
-      height: 78%;
-      border-radius: 26px;
-      background: linear-gradient(180deg, #2b2f22, #141519);
-      border: 1px solid rgba(255,255,255,.08);
-      display: grid;
-      place-items: center;
-      font-size: 110px;
-      box-shadow: inset 0 0 40px rgba(158,255,0,.06);
-    }
+.speaker-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border: 1px solid rgba(255,255,255,.08);
+}
 
     .speaker-info h3 {
       font-size: 28px;
@@ -643,21 +632,24 @@
         margin-bottom: 10px;
       }
       .speaker-photo {
-        aspect-ratio: 1 / 1.15;
-        border-radius: 18px;
-        margin-bottom: 16px;
-      }
-      .speaker-photo::before {
-        font-size: 22px;
-        top: 12px;
-        left: 12px;
-      }
-      .speaker-avatar {
-        width: 74%;
-        height: 74%;
-        font-size: 68px;
-        border-radius: 20px;
-      }
+  aspect-ratio: 1 / 1.15;
+  border-radius: 18px;
+  margin-bottom: 16px;
+  padding: 12px;
+}
+
+.speaker-photo::before {
+  content: none;
+}
+
+.speaker-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
       .speaker-info h3,
       .feature-card h3,
       .program-card h3,
