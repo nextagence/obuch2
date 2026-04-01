@@ -223,9 +223,9 @@
 
     .mini-stat strong {
       display: block;
-      font-size: 28px;
+      font-size: 22px;
       font-weight: 900;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .mini-stat span {
@@ -413,14 +413,15 @@
     }
 
     .date-chip {
-      padding: 16px 18px;
-      border-radius: 18px;
+      padding: 14px;
+      border-radius: 16px;
       background: rgba(255,255,255,.04);
       border: 1px solid var(--line);
-      font-weight: 800;
+      font-weight: 700;
       display: flex;
       justify-content: space-between;
-      gap: 12px;
+      gap: 8px;
+      font-size: 13px;
     }
 
     .list {
@@ -432,8 +433,8 @@
 
     .case-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 20px;
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
 
     .metric-row {
@@ -441,6 +442,19 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
       margin-top: 18px;
+    }
+
+    @media (max-width: 480px) {
+      .metric-row {
+        grid-template-columns: 1fr 1fr;
+      }
+      .metric {
+        padding: 10px;
+      }
+      .metric strong {
+        font-size: 18px;
+        word-break: break-word;
+      }
     }
 
     .metric {
