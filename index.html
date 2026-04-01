@@ -545,24 +545,151 @@
 
     @media (max-width: 760px) {
       .nav { display: none; }
-      .section, .hero { padding: 56px 0; }
-      .hero-card, .speaker, .event-main, .event-side, .cta-box { padding: 24px; }
+      .topbar-inner {
+        min-height: 64px;
+      }
+      .logo span:last-child {
+        font-size: 14px;
+      }
+      .section, .hero { padding: 42px 0; }
+      .container {
+        width: min(100% - 20px, var(--container));
+      }
+      .hero-card, .speaker, .event-main, .event-side, .cta-box,
+      .feature-card, .program-card, .case-card, .faq-item {
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .hero-grid {
+        gap: 14px;
+      }
+      .hero-title {
+        font-size: 34px;
+        line-height: 1;
+        letter-spacing: -.04em;
+        margin-bottom: 14px;
+        max-width: 100%;
+      }
+      .hero-subtitle,
+      .section-text,
+      .faq-answer,
+      .feature-card p,
+      .program-card p,
+      .case-card p,
+      .cta-box p,
+      .list li {
+        font-size: 14px;
+        line-height: 1.45;
+      }
+      .eyebrow,
+      .badge {
+        font-size: 11px;
+      }
+      .badge {
+        padding: 8px 11px;
+      }
+      .btn {
+        width: 100%;
+        min-height: 48px;
+        padding: 0 16px;
+        font-size: 14px;
+        border-radius: 14px;
+      }
+      .hero-actions {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
       .hero-stats,
       .grid-4,
       .grid-3,
       .grid-2,
       .case-grid,
-      .metric-row {
+      .metric-row,
+      .event-box {
         grid-template-columns: 1fr;
       }
       .section-head {
         align-items: start;
         flex-direction: column;
+        gap: 12px;
+        margin-bottom: 22px;
       }
-      .hero-title { max-width: unset; }
-      .btn { width: 100%; }
-      .hero-actions { flex-direction: column; }
-      .speaker-avatar { font-size: 74px; }
+      .section-title {
+        font-size: 28px;
+        line-height: 1.02;
+        margin-bottom: 10px;
+      }
+      .speaker-photo {
+        aspect-ratio: 1 / 1.15;
+        border-radius: 18px;
+        margin-bottom: 16px;
+      }
+      .speaker-photo::before {
+        font-size: 22px;
+        top: 12px;
+        left: 12px;
+      }
+      .speaker-avatar {
+        width: 74%;
+        height: 74%;
+        font-size: 68px;
+        border-radius: 20px;
+      }
+      .speaker-info h3,
+      .feature-card h3,
+      .program-card h3,
+      .case-card h3,
+      .cta-box h3 {
+        font-size: 20px;
+      }
+      .speaker-info p {
+        font-size: 13px;
+        margin-bottom: 12px;
+      }
+      .speaker-points,
+      .event-date,
+      .faq {
+        gap: 10px;
+      }
+      .speaker-points div,
+      .date-chip,
+      .metric,
+      .mini-stat,
+      details.faq-item summary {
+        padding: 12px 14px;
+        border-radius: 14px;
+      }
+      .num {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        margin-bottom: 14px;
+        font-size: 14px;
+      }
+      .mini-stat strong,
+      .metric strong {
+        font-size: 22px;
+      }
+      .mini-stat span,
+      .metric span {
+        font-size: 12px;
+      }
+      .event-side h3 {
+        font-size: 28px !important;
+      }
+      .list {
+        padding-left: 16px;
+        gap: 8px;
+      }
+      .footer {
+        padding: 14px 0 34px;
+        font-size: 12px;
+      }
+      .footer-inner {
+        gap: 10px;
+        padding-top: 16px;
+      }
     }
   </style>
 </head>
